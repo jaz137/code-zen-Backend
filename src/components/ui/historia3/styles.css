@@ -1,0 +1,215 @@
+/* Keep the original body and nav styles */
+
+/* Update container, panel, and details to match the image */
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100vw;
+}
+
+.panel {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  width: 80%;
+}
+
+.panel h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.details {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: #666;
+  width: 30%;
+  margin-left: auto;
+}
+
+.details p,
+.details div {
+  margin-bottom: 15px;
+  line-height: 2;
+}
+.TituloCalificar {
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  text-align: center; /* Ensures text is centered within the element */
+  height: 100%; /* Optional: adjusts height based on parent */
+  margin: auto; /* Adds automatic margins to center within parent */
+  width: 100%;
+}
+
+/* Update renter list styles for better alignment */
+.renter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 0.1px solid;
+}
+
+.renter {
+  display: grid;
+  grid-template-columns: 1.5fr 1.2fr 1fr 1.3fr;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+  width:100%;
+}
+
+.renter:last-child {
+  border-bottom: none;
+}
+
+.renter:hover {
+  background-color: #f5f5f5;
+}
+
+.renter-name {
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+
+.renter-car {
+  color: #666;
+  display: flex;
+  flex-direction: column;
+}
+
+.renter-date {
+  color: #666;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.renter-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* Button styles to match the image */
+.renter button {
+  background-color: #3b5a7c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 36px;
+  font-weight: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.long-button {
+  width: 200px; /* Makes this button longer */
+  padding: 0.5rem 1rem; /* Maintain consistent padding */
+}
+
+.renter button:hover {
+  background-color: #3b5a7c;
+}
+
+.delete-button {
+  background-color: #ff3b30 !important;
+  color: white;
+  width: 36px;
+  height: 36px;
+}
+
+.delete-button:hover {
+  background-color: #dc3545 !important;
+}
+
+/* Rating form styles */
+.rating-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.rating-row label {
+  flex: 1;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.rating-row .estrellas {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.calificacion-form {
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.botones button {
+  background-color: #3b5a7c;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.botones button:first-child {
+  background-color: #6c757d;
+}
+
+.botones button:last-child {
+  background-color: #3b5a7c;
+}
+
+.botones button:hover {
+  opacity: 0.9;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .panel,
+  .details {
+    width: 100%;
+  }
+
+  .renter {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .renter-actions {
+    justify-content: flex-start;
+  }
+
+  .rating-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
