@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+//import Image from "next/image"
 
 export default function CardExample() {
   return (
@@ -25,7 +26,7 @@ export default function CardExample() {
           </CardFooter>
         </Card>
 
-        
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <Card className="overflow-hidden">
           <div className="h-48 w-full">
             <img

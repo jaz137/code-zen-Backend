@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import styles from "../styles/Whatsapp.module.css";
-import { useRouter } from "next/router";
+//import { useRouter } from "next/router";
 import QRCode from 'qrcode';
 
 //interface QRCodeOptions {

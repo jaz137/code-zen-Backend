@@ -10,25 +10,38 @@ import ReportRenter from "@/components/report-renter"
 import CommentsSection from "@/components/comments-section"
 
 async function getRenterData(id: string) {
-  const res = await fetch(`http://localhost:4000/api/usuario/9`, {
+  const res = await fetch(`http://localhost:4000/api/usuario/${id}`, {
     cache: "no-store",
-  })
-  if (!res.ok) throw new Error("Error al obtener datos del arrendatario")
-  return res.json()
+  });
+  if (!res.ok) throw new Error("Error al obtener datos del arrendatario");
+  return res.json();
 }
 async function getComentarios(id: string) {
-  const res = await fetch(`http://localhost:4000/api/comentarios/9`, {
+  const res = await fetch(`http://localhost:4000/api/comentarios/${id}`, {
     cache: "no-store",
-  })
-  if (!res.ok) return []
-  return res.json()
+  });
+  if (!res.ok) return [];
+  return res.json();
 }
+
+type Comentario = {
+  id: number;
+  calificador?: {
+    nombre: string;
+    foto: string;
+  };
+  fecha_creacion: string;
+  comentario: string;
+  comportamiento: number;
+  cuidadovehiculo: number;
+  puntualidad: number;
+};
 
 export default async function RenterProfilePage({ params }: { params: { id: string } }) {
   const renter = await getRenterData(params.id)
   const comentariosCrudos = await getComentarios(params.id)
 
-  const comentarios = comentariosCrudos.map((c: any) => ({
+  const comentarios = comentariosCrudos.map((c: Comentario) => ({
     id: c.id,
     anfitrion: c.calificador?.nombre || "Anónimo",
     fecha: new Date(c.fecha_creacion).toLocaleDateString(),

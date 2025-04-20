@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown } from "lucide-react";
+
+
 interface ProductosTableProps {
   hostId: number; // Explicitly define that hostId is a number
 }
@@ -70,7 +72,7 @@ export function ProductosTable({ hostId }:ProductosTableProps) {
     }
     return 0;
   });
-
+  
   // Función para ordenar campos anidados (como marca y modelo)
   const sortedNestedReservations = [...reservations].sort((a, b) => {
     if (!sortConfig.key) return 0;
@@ -203,28 +205,36 @@ export function ProductosTable({ hostId }:ProductosTableProps) {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {sortedNestedReservations.map((reserva,index) => (
-              <tr key={`${reserva.marca}-${reserva.modelo}-${reserva.fecha_inicio}-${index}`} className="hover:bg-gray-50">
-                <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
-                  {reserva.marca} {reserva.modelo}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-gray-500">
-                  {reserva.nombre_usuario}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-gray-500">
-                  {formatDate(reserva.fecha_inicio)}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-gray-500">
-                  {formatDate(reserva.fecha_fin)}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full capitalize ${getStatusColor(reserva.estado)}`}>
-                    {reserva.estado.toLowerCase()}
-                  </span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
+  {sortedNestedReservations.map((reserva, index) => (
+    <tr
+      key={`${reserva.marca}-${reserva.modelo}-${reserva.fecha_inicio}-${index}`}
+      className="hover:bg-gray-50"
+    >
+      <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+        {reserva.marca} {reserva.modelo}
+      </td>
+      <td className="px-6 py-4 whitespace-nowrap text-gray-500">
+        {reserva.nombre_usuario}
+      </td>
+      <td className="px-6 py-4 whitespace-nowrap text-gray-500">
+        {formatDate(reserva.fecha_inicio)}
+      </td>
+      <td className="px-6 py-4 whitespace-nowrap text-gray-500">
+        {formatDate(reserva.fecha_fin)}
+      </td>
+      <td className="px-6 py-4 whitespace-nowrap">
+        <span
+          className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full capitalize ${getStatusColor(
+            reserva.estado
+          )}`}
+        >
+          {reserva.estado.toLowerCase()}
+        </span>
+      </td>
+    </tr>
+  ))}
+</tbody>
+
         </table>
       </div>
 
