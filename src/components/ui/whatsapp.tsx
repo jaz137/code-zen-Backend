@@ -5,20 +5,20 @@ import styles from "../styles/Whatsapp.module.css";
 import { useRouter } from "next/router";
 import QRCode from 'qrcode';
 
-interface QRCodeOptions {
-  width?: number;
-  margin?: number;
-  color?: {
-    dark: string;
-    light: string;
-  };
-}
+//interface QRCodeOptions {
+ // width?: number;
+ // margin?: number;
+//color?: {
+  //  dark: string;
+  //  light: string;
+ // };
+//}
 
 export default function WhatsappPage() {
   const qrRef = useRef<HTMLCanvasElement>(null);
   const [qrGenerated, setQrGenerated] = useState<boolean>(false);
   const phoneNumber = "59169452022";
-  const router = useRouter();
+  //const router = useRouter();
 
   useEffect(() => {
     if (!qrRef.current) return;

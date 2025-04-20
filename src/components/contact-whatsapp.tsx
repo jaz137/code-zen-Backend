@@ -2,24 +2,15 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import { QRCodeSVG } from "qrcode.react"
-import { MessageCircle, QrCode, ExternalLink } from "lucide-react"
-import { OpenInNewWindowIcon } from "@radix-ui/react-icons"
+
+import { MessageCircle, } from "lucide-react"
 
 interface ContactWhatsAppProps {
   phone: string
 }
 
 export default function ContactWhatsApp({ phone }: ContactWhatsAppProps) {
-  const [open, setOpen] = useState(false)
+  
   const abrirNuevaPestana = () => {
     window.open(`/page2?phone=${phone}`,"_blank")
   }

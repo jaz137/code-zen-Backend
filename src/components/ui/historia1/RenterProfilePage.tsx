@@ -3,9 +3,9 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Star, MapPin, Mail, Briefcase, Calendar, AlertCircle } from "lucide-react"
 import ContactWhatsApp from "@/components/contact-whatsapp"
-import RenterStats from "@/components/renter-stats"
+
 import VerificationBadges from "@/components/verification-badges"
-import RentalHistory from "@/components/rental-history"
+
 import ReportRenter from "@/components/report-renter"
 import CommentsSection from "@/components/comments-section"
 
